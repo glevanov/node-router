@@ -1,6 +1,7 @@
 {
   "name": "node-router",
   "version": "1.0.0",
+  "type": "module",
   "description": "A helper for routing for a plain Node.js server",
   "main": "index.js",
   "author": "Grigoriy Levanov",
