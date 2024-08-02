@@ -1,0 +1,8 @@
+{
+  "name": "node-router",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Grigoriy Levanov",
+  "license": "MIT"
+}
