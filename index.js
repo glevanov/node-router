@@ -4,11 +4,19 @@ export class Router {
   }
 
   addRoute(method, url, handler) {
-    this.routes[`${method}:${url}`] = handler;
+    const { pathname } = new URL(url, 'http://localhost')
+
+    this.routes[`${method.toLowerCase()}:${pathname}`] = handler;
   }
 
   handle(req, res) {
-    const handler = this.routes[`${req.method}:${req.url}`];
+    const method = req.method.toLowerCase();
+
+    const parsedUrl = new URL(String(req.url), 'http://localhost');
+    const url = parsedUrl.pathname;
+
+    const handler = this.routes[`${method}:${url}`];
+    console.log('debug 2, url')
     if (handler) {
       handler(req, res);
     } else {
