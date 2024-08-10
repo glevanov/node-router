@@ -16,7 +16,7 @@ export class Router {
     const url = parsedUrl.pathname;
 
     const handler = this.routes[`${method}:${url}`];
-    console.log('debug 2, url')
+
     if (handler) {
       handler(req, res);
     } else {
